@@ -1,0 +1,2 @@
+add_lunch_combo slim_hima-userdebug
+add_lunch_combo slim_hima-eng
