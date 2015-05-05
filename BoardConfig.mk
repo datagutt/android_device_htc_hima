@@ -31,7 +31,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_USES_64_BIT_BINDER := true
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 earlyprintk=msm_hsl_uart,0xf991e000 androidboot.hardware=htc_hima androidusb.pid=0x065d androidkey.dummy=1 androidtouch.htc_event=1 disk_mode_enable=1 androidboot.selinux=disabled
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 earlyprintk=msm_hsl_uart,0xf991e000 androidboot.hardware=qcom androidusb.pid=0x065d androidkey.dummy=1 androidtouch.htc_event=1 disk_mode_enable=1 androidboot.selinux=disabled
 BOARD_KERNEL_BASE := 0x00078000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DT := true
@@ -44,21 +44,22 @@ BOARD_KERNEL_IMAGE_NAME := Image
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 402653184
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 611057664
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 3758096384
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_RECOVERY_DEVICE_MODULES += chargeled
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# BOARD_CUSTOM_BOOTIMG_MK := device/htc/hima/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/hima/recovery/mkbootimg.mk
+TARGET_PREBUILT_KERNEL := device/htc/hima/recovery/kernel
+#
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
-# TARGET_PREBUILT_KERNEL := device/htc/hima/recovery/kernel
 TARGET_RECOVERY_INITRC := device/htc/hima/recovery/etc/init.rc
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true

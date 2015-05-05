@@ -1,2 +1,2 @@
-add_lunch_combo slim_hima-userdebug
-add_lunch_combo slim_hima-eng
+add_lunch_combo htc_himauhl_hima-userdebug
+add_lunch_combo htc_himauhl_hima-eng
